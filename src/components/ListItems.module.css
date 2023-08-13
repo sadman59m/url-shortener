@@ -1,0 +1,10 @@
+.url-list-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.url {
+  margin-bottom: 5px;
+}

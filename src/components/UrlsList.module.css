@@ -1,0 +1,11 @@
+.list-container {
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 40rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
