@@ -2,6 +2,8 @@
 
 # Url Shorterer
 
+checkout: https://url-shortener-beige-gamma.vercel.app/
+
 - enter you long url
 - we provide you a unique short url
 
@@ -9,3 +11,4 @@
 
 - React
 - Redux
+- react-router-dom
