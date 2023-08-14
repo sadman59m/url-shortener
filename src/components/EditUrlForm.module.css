@@ -1,11 +1,15 @@
 .edit-form {
   display: flex;
   gap: 1rem;
-  margin: 0.5rem 1rem;
+  margin: 0.5rem 0.5rem;
 }
 
 .action {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+.action button {
+  cursor: pointer;
 }

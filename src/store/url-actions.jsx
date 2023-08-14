@@ -11,7 +11,6 @@ export const fetchUrlItems = () => {
 
 export const sendUrlItems = (urlList) => {
   return (dispatch) => {
-    console.log("setting local storage");
     localStorage.setItem("urlItemStorage", JSON.stringify(urlList));
   };
 };
