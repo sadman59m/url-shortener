@@ -19,7 +19,7 @@ const NewForm = () => {
     }
     const uuid = uuidv4();
     const newUrlItem = {
-      shortUrl: "127.0.0.1:5173/" + uuid,
+      shortUrl: "https://url-shortener-beige-gamma.vercel.app/" + uuid,
       longUrl: enteredLongUrl,
       id: uuid,
     };
