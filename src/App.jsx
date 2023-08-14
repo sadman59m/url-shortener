@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "https://url-shortener-beige-gamma.vercel.app/:urlItemId",
+    path: "/:urlItemId",
     element: <UrlManager />,
     errorElement: <ErrorPage />,
     id: "url-item",
