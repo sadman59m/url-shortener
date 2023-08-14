@@ -16,9 +16,9 @@ const UrlManager = () => {
 
 export default UrlManager;
 
-export const loader = ({ params, request }) => {
+export const loader = async ({ params, request }) => {
   const urlItemId = params.urlItemId;
-  const urlItems = JSON.parse(localStorage.getItem("urlItemStorage"));
+  const urlItems = await JSON.parse(localStorage.getItem("urlItemStorage"));
   const urlItem = urlItems.find((item) => item.id === urlItemId);
   if (urlItem) {
     return urlItem;
