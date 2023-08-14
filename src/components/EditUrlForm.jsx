@@ -15,7 +15,6 @@ const EditUrlForm = (props) => {
       return;
     }
     const ulrItem = { ...props.urlItems, longUrl: enteredEditedUrl };
-    console.log(ulrItem);
     dispatch(urlItemActions.addUrlItem(ulrItem));
     props.onClose();
     editUrlValueRef.current.value = "";

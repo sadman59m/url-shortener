@@ -36,7 +36,7 @@ const urlListSlice = createSlice({
       const filteredUrlItems = existingUrlItems.filter(
         (urlItem) => urlItem.id !== urlItemId
       );
-      console.log(filteredUrlItems);
+
       state.items = filteredUrlItems;
       state.changed = true;
     },
