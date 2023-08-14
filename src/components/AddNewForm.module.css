@@ -1,0 +1,13 @@
+.add-new-form {
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.add-new-form h1 {
+  font-size: 1.5rem;
+}
