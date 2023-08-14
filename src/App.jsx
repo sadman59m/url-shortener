@@ -8,7 +8,7 @@ import { loader as urlItemLoader } from "./pages/UrlManager";
 
 const router = createBrowserRouter([
   {
-    path: "https://url-shortener-beige-gamma.vercel.app/",
+    path: "/",
     element: <HomePage />,
     errorElement: <ErrorPage />,
   },
