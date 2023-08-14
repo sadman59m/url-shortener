@@ -1,29 +1,17 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import "./App.css";
-import AddNewUrl from "./components/AddNewUrl";
-import UrlsList from "./components/UrlsList";
-import { fetchUrlItems, sendUrlItems } from "./store/url-actions";
+import HomePage from "./pages/Home";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+]);
 
 function App() {
-  const urlList = useSelector((state) => state.urlList);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchUrlItems());
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (urlList.changed) {
-      dispatch(sendUrlItems(urlList.items));
-    }
-  }, [urlList, dispatch]);
-
-  return (
-    <>
-      <AddNewUrl />
-      <UrlsList />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

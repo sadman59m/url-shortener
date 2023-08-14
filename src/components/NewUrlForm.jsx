@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
@@ -18,7 +19,7 @@ const NewForm = () => {
     }
     const uuid = uuidv4();
     const newUrlItem = {
-      shortUrl: "www." + uuid + ".com",
+      shortUrl: "www.shrurl.sd/" + uuid,
       longUrl: enteredLongUrl,
       id: uuid,
     };
@@ -36,7 +37,7 @@ const NewForm = () => {
         ></input>
       </div>
       <div className={classes.action}>
-        <button>Create</button>
+        <button>Generate</button>
       </div>
     </form>
   );

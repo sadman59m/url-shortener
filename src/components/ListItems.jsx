@@ -9,36 +9,49 @@ import { urlItemActions } from "../store/url-slice";
 const UrlsList = (props) => {
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
+
   const handleVisitUrl = () => {
     const url = "http://" + props.urlItems.longUrl;
     window.open(url, "_blank");
   };
+
   const handleEditUrl = () => {
     setIsEditing(true);
   };
+
   const handleCloseEditUrl = () => {
     setIsEditing(false);
   };
+
   const handleDeleteUrlItem = () => {
     const urlItemId = props.urlItems.id;
-    dispatch(urlItemActions.removeUrlItem(urlItemId));
+    const proceed = window.confirm("Comfirm Delete");
+    if (proceed) {
+      dispatch(urlItemActions.removeUrlItem(urlItemId));
+    }
   };
+
   return (
     <li className={classes["url-list-items"]}>
       <div className={classes.urls}>
-        <div
-          className={classes.url}
-        >{`Short Url: ${props.urlItems.shortUrl}`}</div>
-        <div
-          className={classes.url}
-        >{`Long Url: ${props.urlItems.longUrl}`}</div>
+        <div>
+          <span>Short Url:</span>
+          <span className={classes.url} onClick={handleVisitUrl}>
+            {props.urlItems.shortUrl}
+          </span>
+        </div>
+        <div>
+          <span>Long Url:</span>
+          <span className={classes.url} onClick={handleVisitUrl}>
+            {props.urlItems.longUrl}
+          </span>
+        </div>
         {isEditing && (
           <EditUrlForm urlItems={props.urlItems} onClose={handleCloseEditUrl} />
         )}
       </div>
       {!isEditing && (
         <div className={classes.action}>
-          <button onClick={handleVisitUrl}>visit</button>
           <button onClick={handleEditUrl}>Edit</button>
           <button onClick={handleDeleteUrlItem}>Delete</button>
         </div>
