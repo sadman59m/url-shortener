@@ -31,7 +31,7 @@ const UrlsList = () => {
             ))}
           </ul>
         )}
-        {urlList.length <= 0 && <p>No urls to show</p>}
+        {urlList.items.length === 0 && <p>No urls to show</p>}
       </Card>
     </div>
   );
