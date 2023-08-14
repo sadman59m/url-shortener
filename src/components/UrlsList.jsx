@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import ListItems from "./ListItems";
 import Card from "./UI/Card";
@@ -7,9 +7,7 @@ import Card from "./UI/Card";
 import classes from "./UrlsList.module.css";
 
 const UrlsList = () => {
-  const [urlList, setUrlList] = useState(
-    JSON.parse(localStorage.getItem("urlListStorage")) || []
-  );
+  const urlList = useSelector((state) => state.urlList.items);
 
   return (
     <div className={classes["list-container"]}>

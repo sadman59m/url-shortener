@@ -1,0 +1,11 @@
+.edit-form {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 1rem;
+}
+
+.action {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}

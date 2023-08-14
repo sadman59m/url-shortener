@@ -6,6 +6,7 @@
   border: 1px solid #aaa;
   padding: 0.5rem 0.5rem;
   border-radius: 6px;
+  gap: 1rem;
 }
 
 .url {
@@ -13,6 +14,18 @@
   color: rgb(35, 143, 231);
   overflow: hidden;
   word-wrap: break-word;
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.action button {
+  cursor: pointer;
 }
 
 @media (min-width: 500px) {
