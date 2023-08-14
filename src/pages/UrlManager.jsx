@@ -20,7 +20,6 @@ export const loader = async ({ params, request }) => {
   const urlItemId = params.urlItemId;
   const urlItems = await JSON.parse(localStorage.getItem("urlItemStorage"));
   const urlItem = urlItems.find((item) => item.id === urlItemId);
-  console.log(urlItem);
   if (urlItem) {
     return urlItem;
   } else {
