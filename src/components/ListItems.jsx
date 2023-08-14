@@ -25,8 +25,13 @@ const UrlsList = (props) => {
   };
   return (
     <li className={classes["url-list-items"]}>
-      <div className={classes.url}>
-        <span>{props.urlItems.shortUrl}</span>
+      <div className={classes.urls}>
+        <div
+          className={classes.url}
+        >{`Short Url: ${props.urlItems.shortUrl}`}</div>
+        <div
+          className={classes.url}
+        >{`Long Url: ${props.urlItems.longUrl}`}</div>
         {isEditing && (
           <EditUrlForm urlItems={props.urlItems} onClose={handleCloseEditUrl} />
         )}
