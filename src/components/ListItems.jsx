@@ -11,8 +11,11 @@ const UrlsList = (props) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const handleVisitUrl = () => {
-    const url = "http://" + props.urlItems.longUrl;
-    window.open(url, "_blank");
+    let longUrl = props.urlItems.longUrl;
+    if (!longUrl.includes("https")) {
+      longUrl = "https://" + longUrl;
+    }
+    window.open(longUrl, "_blank");
   };
 
   const handleEditUrl = () => {
@@ -52,8 +55,12 @@ const UrlsList = (props) => {
       </div>
       {!isEditing && (
         <div className={classes.action}>
-          <button onClick={handleEditUrl}>Edit</button>
-          <button onClick={handleDeleteUrlItem}>Delete</button>
+          <button className={classes.edit} onClick={handleEditUrl}>
+            Edit
+          </button>
+          <button className={classes.delete} onClick={handleDeleteUrlItem}>
+            Delete
+          </button>
         </div>
       )}
     </li>

@@ -19,7 +19,7 @@ const NewForm = () => {
     }
     const uuid = uuidv4();
     const newUrlItem = {
-      shortUrl: "http://127.0.0.1:5173/" + uuid,
+      shortUrl: "127.0.0.1:5173/" + uuid,
       longUrl: enteredLongUrl,
       id: uuid,
     };

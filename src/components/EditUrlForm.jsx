@@ -2,8 +2,9 @@
 /* eslint-disable no-unused-vars */
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
-import classes from "./EditUrlForm.module.css";
 import { urlItemActions } from "../store/url-slice";
+
+import classes from "./EditUrlForm.module.css";
 
 const EditUrlForm = (props) => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const EditUrlForm = (props) => {
   };
   return (
     <form className={classes["edit-form"]} onSubmit={handleEditedUrlSubmit}>
-      <div>
+      <div className={classes["form-control"]}>
         <input
           type="text"
           defaultValue={props.urlItems.longUrl}
@@ -30,8 +31,10 @@ const EditUrlForm = (props) => {
         />
       </div>
       <div className={classes.action}>
-        <button>update</button>
-        <button onClick={props.onClose}>cancel</button>
+        <button className={classes.update}>update</button>
+        <button className={classes.cancel} onClick={props.onClose}>
+          cancel
+        </button>
       </div>
     </form>
   );

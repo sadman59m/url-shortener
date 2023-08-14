@@ -1,17 +1,17 @@
 /* eslint-disable no-unused-vars */
-import { useRouteError, useRouteLoaderData } from "react-router-dom";
+import { useRouteLoaderData } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const UrlManager = () => {
   const urlItem = useRouteLoaderData("url-item");
-  console.log(urlItem);
-  const errorData = useRouteError();
-  console.log(errorData);
-  return (
-    <>
-      <h1>Url Manager Page</h1>
-    </>
-  );
+  let longUrl = urlItem.longUrl;
+  if (!longUrl.includes("https")) {
+    longUrl = "https://" + longUrl;
+  }
+  useEffect(() => {
+    window.location.href = longUrl;
+  }, [longUrl]);
 };
 
 export default UrlManager;
@@ -24,7 +24,10 @@ export const loader = ({ params, request }) => {
     return urlItem;
   } else {
     throw new Response(
-      JSON.stringify({ message: "Someting went wrong. ShortUrl not found!" })
+      JSON.stringify({
+        message1: "Someting went wrong",
+        message2: "Short Url not found!",
+      })
     );
   }
 };

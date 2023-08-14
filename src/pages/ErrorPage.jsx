@@ -1,14 +1,21 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError, Link } from "react-router-dom";
+
+import classes from "./ErrorPage.module.css";
 
 import Card from "../components/UI/Card";
 
 const ErrorPage = () => {
   const error = useRouteError();
-  const message = JSON.parse(error.data).message;
-  console.log(message);
+  let message1, message2;
+  if (error) {
+    message1 = JSON.parse(error.data).message1;
+    message2 = JSON.parse(error.data).message2;
+  }
   return (
-    <Card>
-      <h1>{message}</h1>
+    <Card className={classes.errorModule}>
+      <h1>{message1}</h1>
+      <p>{message2}</p>
+      <Link to="/">Go Back</Link>
     </Card>
   );
 };
