@@ -3,12 +3,16 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { urlItemActions } from "../store/url-slice";
+import { getName } from "../util/auth";
 
 import classes from "./EditUrlForm.module.css";
 
 const EditUrlForm = (props) => {
   const dispatch = useDispatch();
   const editUrlValueRef = useRef();
+  const userName = getName();
+
+  console.log(props.urlItems);
   const handleEditedUrlSubmit = (event) => {
     event.preventDefault();
     const enteredEditedUrl = editUrlValueRef.current.value;
@@ -16,7 +20,11 @@ const EditUrlForm = (props) => {
       return;
     }
     const ulrItem = { ...props.urlItems, longUrl: enteredEditedUrl };
-    dispatch(urlItemActions.addUrlItem(ulrItem));
+    const urlUserItem = {
+      username: userName,
+      item: ulrItem,
+    };
+    dispatch(urlItemActions.updateItem(urlUserItem));
     props.onClose();
     editUrlValueRef.current.value = "";
   };

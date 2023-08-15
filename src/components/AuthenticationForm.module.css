@@ -10,12 +10,12 @@
 .control input {
   padding: 0.25rem 0.5rem;
   font-size: inherit;
-  border: 2px solid #aaa;
+  border: 1px solid #aaa;
   border-radius: 3px;
 }
 
 .control input::placeholder {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   opacity: 0.5;
 }
 

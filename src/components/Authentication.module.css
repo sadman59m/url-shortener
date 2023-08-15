@@ -1,14 +1,14 @@
-.add-new-form {
+.main {
   width: 90%;
   max-width: 40rem;
-  margin: 2rem auto;
+  margin: 5rem auto;
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
+  text-align: center;
 }
 
-.add-new-form h1 {
+.main h1 {
   font-size: 1.5rem;
   color: #666;
 }
