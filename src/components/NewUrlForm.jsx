@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
 import { urlItemActions } from "../store/url-slice";
+import { getName } from "../util/auth";
 
 import classes from "./NewInputForm.module.css";
 
@@ -11,6 +12,8 @@ const NewForm = () => {
   const urlItems = useSelector((state) => state.urlList.items);
   const dispatch = useDispatch();
   const urlInputRef = useRef();
+  const userName = getName();
+
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredLongUrl = urlInputRef.current.value;
@@ -19,9 +22,12 @@ const NewForm = () => {
     }
     const uuid = uuidv4();
     const newUrlItem = {
-      shortUrl: "127.0.0.1:5173/" + uuid,
-      longUrl: enteredLongUrl,
-      id: uuid,
+      username: userName,
+      item: {
+        shortUrl: "127.0.0.1:5173/" + uuid,
+        longUrl: enteredLongUrl,
+        id: uuid,
+      },
     };
     dispatch(urlItemActions.addUrlItem(newUrlItem));
     urlInputRef.current.value = "";

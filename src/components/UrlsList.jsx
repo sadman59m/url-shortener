@@ -26,6 +26,13 @@ const UrlsList = () => {
 
   const userName = getName();
 
+  let userItem = urlList.userItems.find(
+    (userItem) => userItem.username === userName
+  );
+  if (!userItem) {
+    userItem = { username: userName, items: [] };
+  }
+
   const handleLogout = () => {};
 
   return (
@@ -37,14 +44,14 @@ const UrlsList = () => {
             <button onClick={handleLogout}>Logout</button>
           </Form>
         </div>
-        {urlList.items.length > 0 && (
+        {userItem.items.length > 0 && (
           <ul className={classes.list}>
-            {urlList.items.map((url) => (
+            {userItem.items.map((url) => (
               <ListItems key={url.id} urlItems={url} />
             ))}
           </ul>
         )}
-        {urlList.items.length === 0 && <p>No urls to show</p>}
+        {userItem.items.length === 0 && <p>No saved urls to show</p>}
       </Card>
     </div>
   );

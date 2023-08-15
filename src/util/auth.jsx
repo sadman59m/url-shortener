@@ -11,7 +11,6 @@ export const getName = () => {
 
 export const checkAuth = () => {
   const userName = getName();
-  console.log(userName);
   if (!userName) {
     return redirect("/auth");
   }

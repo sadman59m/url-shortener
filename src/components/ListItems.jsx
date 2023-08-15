@@ -5,10 +5,12 @@ import { useDispatch } from "react-redux";
 import classes from "./ListItems.module.css";
 import EditUrlForm from "./EditUrlForm";
 import { urlItemActions } from "../store/url-slice";
+import { getName } from "../util/auth";
 
 const UrlsList = (props) => {
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
+  const userName = getName();
 
   const handleVisitUrl = () => {
     let longUrl = props.urlItems.longUrl;
@@ -30,7 +32,11 @@ const UrlsList = (props) => {
     const urlItemId = props.urlItems.id;
     const proceed = window.confirm("Comfirm Delete");
     if (proceed) {
-      dispatch(urlItemActions.removeUrlItem(urlItemId));
+      const deleteInfo = {
+        username: userName,
+        itemId: urlItemId,
+      };
+      dispatch(urlItemActions.removeUrlItem(deleteInfo));
     }
   };
 

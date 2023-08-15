@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { redirect } from "react-router-dom";
 import Authentication from "../components/Authentication";
 
