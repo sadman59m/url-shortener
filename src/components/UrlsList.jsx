@@ -39,19 +39,21 @@ const UrlsList = () => {
     <div className={classes["list-container"]}>
       <Card>
         <div className={classes.action}>
-          <h3>{`User: ${userName}`}</h3>
+          <h1>{`User: ${userName}`}</h1>
           <Form action="/logout" method="post">
             <button onClick={handleLogout}>Logout</button>
           </Form>
         </div>
-        {userItem.items.length > 0 && (
-          <ul className={classes.list}>
-            {userItem.items.map((url) => (
-              <ListItems key={url.id} urlItems={url} />
-            ))}
-          </ul>
-        )}
-        {userItem.items.length === 0 && <p>No saved urls to show</p>}
+        <div className={classes.content}>
+          {userItem.items.length > 0 && (
+            <ul className={classes.list}>
+              {userItem.items.map((url) => (
+                <ListItems key={url.id} urlItems={url} />
+              ))}
+            </ul>
+          )}
+          {userItem.items.length === 0 && <h1>No saved URLs to show</h1>}
+        </div>
       </Card>
     </div>
   );

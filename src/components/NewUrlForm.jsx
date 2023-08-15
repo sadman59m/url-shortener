@@ -37,7 +37,7 @@ const NewForm = () => {
       <div className={classes.control}>
         <input
           type="text"
-          placeholder="enter url here"
+          placeholder="Enter long URL here"
           ref={urlInputRef}
           required
         ></input>

@@ -7,3 +7,8 @@
   align-items: center;
   text-align: center;
 }
+
+.main h1 {
+  font-size: 1.5rem;
+  color: #666;
+}

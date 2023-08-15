@@ -10,8 +10,13 @@
 .control input {
   padding: 0.25rem 0.5rem;
   font-size: inherit;
-  border: 1px solid #aaa;
+  border: 2px solid #aaa;
   border-radius: 3px;
+}
+
+.control input::placeholder {
+  font-size: 1.2rem;
+  opacity: 0.5;
 }
 
 .action {
@@ -20,6 +25,7 @@
   display: flex;
   justify-content: center;
   border-radius: 3px;
+  padding: 0.25rem 0.5rem;
 }
 
 .action button {
@@ -36,5 +42,15 @@
 @media (min-width: 500px) {
   .form {
     flex-direction: row;
+  }
+  .control input {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .action {
+    border-right: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
