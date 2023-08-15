@@ -10,7 +10,7 @@
 .control input {
   padding: 0.25rem 0.5rem;
   font-size: inherit;
-  border: 1px solid #aaa;
+  border: 2px solid #aaa;
   border-radius: 3px;
 }
 
