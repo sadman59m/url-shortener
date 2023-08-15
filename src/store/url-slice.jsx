@@ -3,19 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const urlListSlice = createSlice({
   name: "urlList",
   initialState: {
-    userItems: [
-      {
-        username: null,
-        items: [],
-      },
-    ],
+    userItems: [],
     changed: false,
   },
   reducers: {
     replaceUrlItems: (state, action) => {
-      const urlItems = action.payload;
-      state.items = urlItems;
+      const userItems = action.payload;
+      state.userItems = userItems || [];
     },
+
     addUrlItem: (state, action) => {
       const newUserItem = action.payload;
       const userName = newUserItem.username;
@@ -42,6 +38,7 @@ const urlListSlice = createSlice({
       }
 
       state.userItems = updatedUserItems;
+      state.changed = true;
 
       // console.log(urlItem.id);
       // const existingUrlItemIndex = state.items.findIndex(
@@ -96,6 +93,7 @@ const urlListSlice = createSlice({
         //   item;
       }
       state.userItems = updatedUserItems;
+      state.changed = true;
     },
     removeUrlItem: (state, action) => {
       const userName = action.payload.username;
@@ -115,6 +113,7 @@ const urlListSlice = createSlice({
         updatedUserItems[existingUserIndex] = updatedUser;
       }
       state.userItems = updatedUserItems;
+      state.changed = true;
     },
   },
 });

@@ -20,7 +20,7 @@ const UrlsList = () => {
 
   useEffect(() => {
     if (urlList.changed) {
-      dispatch(sendUrlItems(urlList.items));
+      dispatch(sendUrlItems(urlList.userItems));
     }
   }, [urlList, dispatch]);
 
