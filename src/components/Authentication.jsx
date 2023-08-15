@@ -7,7 +7,9 @@ const Authentication = () => {
   return (
     <Card className={classes.main}>
       <h1>Authentication page</h1>
-      <AuthForm />
+      <div>
+        <AuthForm />
+      </div>
     </Card>
   );
 };
