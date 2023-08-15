@@ -7,6 +7,8 @@ import UrlManager from "./pages/UrlManager";
 import { loader as urlItemLoader } from "./pages/UrlManager";
 import AuthenticationPage from "./pages/Authentication";
 import { checkAuth } from "./util/auth";
+import { action as authAction } from "./pages/Authentication";
+import { action as logoutAction } from "./pages/Logout";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,11 @@ const router = createBrowserRouter([
   {
     path: "/auth",
     element: <AuthenticationPage />,
+    action: authAction,
+  },
+  {
+    path: "/logout",
+    action: logoutAction,
   },
 ]);
 

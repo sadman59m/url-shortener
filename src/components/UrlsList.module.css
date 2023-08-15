@@ -13,3 +13,27 @@
   overflow: hidden;
   word-wrap: break-word;
 }
+
+.action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.action button {
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.25rem 0.5rem;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid #555;
+  color: #555;
+  border-radius: 3px;
+  transition: all 300ms ease;
+}
+
+.action button:hover {
+  color: #333;
+  background: #ccc;
+}
