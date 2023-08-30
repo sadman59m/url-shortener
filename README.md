@@ -12,5 +12,5 @@ Checkout live: https://url-shortener-beige-gamma.vercel.app/
 - State management via Redux.
 
 # Stack Used
-- Frontend: ReactJs, react-router-dom, Redux.
+- Frontend: ReactJs, react-router-dom, Redux. 
 
